@@ -1,0 +1,1 @@
+export { default as TemShow } from './temshow/index.vue'
