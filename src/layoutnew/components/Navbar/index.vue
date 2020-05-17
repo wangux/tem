@@ -10,12 +10,14 @@
                 </el-row>
             </el-col>
             <el-col :span="14" class="menu">
-                <div class="menuItem" v-for="item in menuOptions" :key="item.label"  @click="goLink(item.url)">
-                    <el-card :body-style="{ height:'100%',display:'flex',justifyContent:'center',alignItems:'center' }" class="menucard">
-                        <i :class="item.icon"></i>
-                    </el-card>
-                    <span class="menu_title">{{ item.label }}</span>
-                </div>
+                <template v-for="item in menuOptions">
+                    <div class="menuItem" :key="item.label" v-if="!item.hidden"  @click="goLink(item.url)">
+                        <el-card :body-style="{ height:'100%',display:'flex',justifyContent:'center',alignItems:'center' }" class="menucard">
+                            <i :class="item.icon"></i>
+                        </el-card>
+                        <span class="menu_title">{{ item.label }}</span>
+                    </div>
+                </template>
             </el-col>
         </el-row>
     </div>
@@ -33,13 +35,13 @@ import { UserModule } from '@/store/modules/user'
 })
 export default class extends Vue {
     private menuOptions = [
-        { icon: 'el-icon-s-data' , label: '温度一览' , url: '/home' },
-        { icon: 'el-icon-s-marketing' , label: '工况图' },
-        { icon: 'el-icon-s-platform' , label: '数据查询' , url: '/dataSelect/index' },
-        { icon: 'el-icon-platform-eleme' , label: '事件记录' },
-        { icon: 'el-icon-s-order' , label: '系统管理' },
-        { icon: 'el-icon-s-tools' , label: '登录' },
-        { icon: 'el-icon-s-custom' , label: '退出' },
+        { id: '1', icon: 'el-icon-s-data' , label: '温度一览' , url: '/home' },
+        { id: '2', icon: 'el-icon-s-marketing' , label: '工况图' },
+        { id: '3', icon: 'el-icon-s-platform' , label: '数据查询' , url: '/dataSelect/index' },
+        { id: '4', icon: 'el-icon-platform-eleme' , label: '事件记录' },
+        { id: '5', icon: 'el-icon-s-order' , label: '系统管理' , url: '/systemManage/index' },
+        { id: '6', icon: 'el-icon-s-tools' , label: '登录' , url: '/login' , hidden: false },
+        { id: '7', icon: 'el-icon-s-custom' , label: '退出' , hidden: true  },
     ];
 
     get device() {

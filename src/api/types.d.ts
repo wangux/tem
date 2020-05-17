@@ -16,6 +16,15 @@ export interface IArticleData {
   pageviews: number
 }
 
+// 用户登录数据模型
+export interface DWLoginData {
+  loginName: string // 登录名
+  password: string // 密码
+  pwkey: string | number // 后台返的密钥
+  imageCode: string | number, // 图片验证码
+  imageKey: string // 后台返的图片验证码密钥
+}
+
 export interface IRoleData {
   key: string
   name: string

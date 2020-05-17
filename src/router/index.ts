@@ -142,6 +142,23 @@ export const constantRoutes: RouteConfig[] = [
         ]
       }
     ]
+  },
+  {
+    path: '/systemManage',
+    component: Layout,
+    redirect: '/systemManage/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import(/* webpackChunkName: "dashboard" */ '@/views/systemManage/index.vue'),
+        name: 'index',
+        meta: {
+          title: 'systemManage',
+          icon: 'systemManage',
+          affix: true
+        }
+      }
+    ]
   }
 ]
 export const constantRoutesTemp: RouteConfig[] = [
