@@ -144,6 +144,42 @@ export const constantRoutes: RouteConfig[] = [
     ]
   },
   {
+    path: '/eventLog',
+    component: Layout,
+    redirect: '/eventLog/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import(/* webpackChunkName: "dashboard" */ '@/views/eventLog/index.vue'),
+        redirect: '/eventLog/index/newEvent',
+        name: 'eventLog',
+        meta: {
+          title: 'eventLog',
+          icon: 'home',
+          affix: true
+        },
+        children: [
+          {
+            path: 'newEvent',
+            component: () => import('@/views/eventLog/components/new-event.vue'),
+            name: 'newEvent',
+            meta: {
+              title: 'newEvent'
+            }
+          },
+          {
+            path: 'historyEvent',
+            component: () => import('@/views/eventLog/components/history-event.vue'),
+            name: 'historyEvent',
+            meta: {
+              title: 'historyEvent'
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     path: '/systemManage',
     component: Layout,
     redirect: '/systemManage/index',

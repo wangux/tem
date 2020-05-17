@@ -38,7 +38,7 @@ export default class extends Vue {
         { id: '1', icon: 'el-icon-s-data' , label: '温度一览' , url: '/home' },
         { id: '2', icon: 'el-icon-s-marketing' , label: '工况图' },
         { id: '3', icon: 'el-icon-s-platform' , label: '数据查询' , url: '/dataSelect/index' },
-        { id: '4', icon: 'el-icon-platform-eleme' , label: '事件记录' },
+        { id: '4', icon: 'el-icon-platform-eleme' , label: '事件记录' , url: '/eventLog/index' },
         { id: '5', icon: 'el-icon-s-order' , label: '系统管理' , url: '/systemManage/index' },
         { id: '6', icon: 'el-icon-s-tools' , label: '登录' , url: '/login' , hidden: false },
         { id: '7', icon: 'el-icon-s-custom' , label: '退出' , hidden: true  },
